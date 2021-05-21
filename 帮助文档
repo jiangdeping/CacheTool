@@ -1,0 +1,110 @@
+https://docs.wxpython.org/wx.CommandEvent.html#wx-commandevent    绑定对应事件
+https://wxpython.org/Phoenix/docs/html/ stock_items.html  ID相关文档说明
+
+
+
+test
+https://blog.csdn.net/jeryjeryjery/article/details/72852318?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-6&spm=1001.2101.3001.4242
+https://blog.csdn.net/momobaba2018/article/details/82765707?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-3.control
+
+
+wx.Frame 样式  多个样式，用运算符"|"连接，去掉个别样式，使用"^"
+wx.CAPTION：在框架上增加一个标题栏，它显示该框架的标题属性。
+wx.CLOSE_BOX：指示系统在框架的标题栏上显示一个关闭框，使用系统默认的位置和样式。
+wx.DEFAULT_FRAME_STYLE：默认样式。
+wx.FRAME_SHAPED：用这个样式创建的框架可以使用SetShape()方法去创建一个非矩形的窗口。
+wx.FRAME_TOOL_WINDOW：通过给框架一个比正常更小的标题栏，使框架看起来像一个工具框窗口。在Windows下，
+使用这个样式创建的框架不会出现在显示所有打开窗口的任务栏上。
+wx.MAXIMIZE_BOX：指示系统在框架的标题栏上显示一个最大化框，使用系统默认的位置和样式。
+wx.MINIMIZE_BOX：指示系统在框架的标题栏上显示一个最小化框，使用系统默认的位置和样式。
+wx.RESIZE_BORDER：给框架增加一个可以改变尺寸的边框。
+wx.SIMPLE_BORDER：没有装饰的边框。不能工作在所有平台上。
+wx.SYSTEM_MENU：增加系统菜单（带有关闭、移动、改变尺寸等功能）和关闭框到这个窗口。在系统菜单中的改变尺寸和关闭功能的有效性依赖于
+wx.MAXIMIZE_BOX,wx.MINIMIZE_BOX和wx.CLOSE_BOX样式是否被应用。
+
+wx.Event的重要的子类:
+wx.CloseEvent：当一个框架关闭时触发。这个事件的类型分为一个通常的框架关闭和一个系统关闭事件。
+wx.CommandEvent：与窗口部件的简单的各种交互都将触发这个事件，如按钮单击、菜单项选择、单选按钮选择。这些交互有它各自的事件类型。
+许多更复杂的窗口部件，如列表等则定义wx.CommandEvent的子类。事件处理系统对待命令事件与其它事件不同。
+wx.KeyEvent：按按键事件。这个事件的类型分按下按键、释放按键、整个按键动作。
+wx.MouseEvent：鼠标事件。这个事件的类型分鼠标移动和鼠标敲击。对于哪个鼠标按钮被敲击和是单击还是双击都有各自的事件类型。
+wx.PaintEvent：当窗口的内容需要被重画时触发。
+wx.SizeEvent：当窗口的大小或其布局改变时触发。
+wx.TimerEvent：可以由类wx.Timer类创建，它是定期的事件。
+
+wx.MouseEvent的事件类型：
+wx.EVT_LEFT_DOWN  绑定鼠标左键按下事件
+wx.EVT_LEFT_UP
+wx.EVT_LEFT_DCLICK
+wx.EVT_MIDDLE_DOWN
+wx.EVT_MIDDLE_UP
+wx.EVT_MIDDLE_DCLICK
+wx.EVT_RIGHT_DOWN
+wx.EVT_RIGHT_UP
+wx.EVT_RIGHT_DCLICK
+wx.EVT_MOTION产生于用户移动鼠标
+wx.ENTER_WINDOW和wx.LEAVE_WINDOW产生于当鼠标进入或离开一个窗口部件时。
+wx.EVT_MOUSEWHEEL被绑定到鼠标滚轮的活动
+wx.EVT_MOUSE_EVENTS一次绑定所有的鼠标事件到一个函数
+
+wx.CommandEvent事件类型：
+EVT_COMMAND：处理命令，提供窗口标识符，命令事件标识符和成员函数。
+EVT_COMMAND_RANGE：处理一系列窗口标识符的命令，提供最小和最大窗口标识符，命令事件标识符以及成员函数。
+EVT_BUTTON：处理wxEVT_BUTTON 由 wx.Button 控件生成的 命令 。
+EVT_CHECKBOX：处理wxEVT_CHECKBOX 由 wx.CheckBox 控件生成的 命令 。
+EVT_CHOICE：处理wxEVT_CHOICE 由 wx.Choice 控件生成的 命令 。
+EVT_COMBOBOX：处理wxEVT_COMBOBOX 由 wx.ComboBox 控件生成的 命令 。
+EVT_LISTBOX：处理wxEVT_LISTBOX 由 wx.ListBox 控件生成的 命令 。
+EVT_LISTBOX_DCLICK：处理wxEVT_LISTBOX_DCLICK 由 wx.ListBox 控件生成的 命令 。
+EVT_CHECKLISTBOX：处理wxEVT_CHECKLISTBOX 由 wx.CheckListBox 控件生成的 命令 。
+EVT_MENU：处理wxEVT_MENU 由菜单项生成的 命令。
+EVT_MENU_RANGE：处理 wxEVT_MENU 命令，该命令由一系列菜单项生成。
+EVT_CONTEXT_MENU：处理用户要求通过按特殊键盘键（在Windows下）或右键单击鼠标来显示弹出菜单时生成的事件。
+EVT_RADIOBOX：处理wxEVT_RADIOBOX 由 wx.RadioBox 控件生成的 命令 。
+EVT_RADIOBUTTON：处理wxEVT_RADIOBUTTON 由 wx.RadioButton 控件生成的 命令 。
+EVT_SCROLLBAR：处理wxEVT_SCROLLBAR 由 wx.ScrollBar 控件生成的 命令 。提供此信息仅出于兼容性考虑；应该使用更具体的滚动条事件宏（请参阅 wx.ScrollEvent）。
+EVT_SLIDER：处理wxEVT_SLIDER 由 wx.Slider 控件生成的 命令 。
+EVT_TEXT：处理wxEVT_TEXT 由 wx.TextCtrl 控件生成的 命令 。
+EVT_TEXT_ENTER：处理wxEVT_TEXT_ENTER 由 wx.TextCtrl 控件生成的 命令 。请注意，wx.TE_PROCESS_ENTER如果希望控件生成此类事件，则在创建控件时必须使用flag。
+EVT_TEXT_MAXLEN：处理一个 wxEVT_TEXT_MAXLEN 命令，该命令由 wx.TextCtrl 控件生成， 当用户尝试向其中输入的字符数超过先前用SetMaxLength（）设置的限制时。
+EVT_TOGGLEBUTTON：处理 wxEVT_TOGGLEBUTTON 事件。
+EVT_TOOL：处理 wxEVT_TOOL 事件（的同义词 wxEVT_MENU）。传递工具的ID。
+EVT_TOOL_RANGE：处理wxEVT_TOOL 一系列标识符的 事件。传递工具的ID。
+EVT_TOOL_RCLICKED：处理 wxEVT_TOOL_RCLICKED 事件。传递工具的ID。（在wxOSX上不可用。）
+EVT_TOOL_RCLICKED_RANGE：处理wxEVT_TOOL_RCLICKED 一系列ID的 事件。传递工具的ID。（在wxOSX上不可用。）
+EVT_TOOL_ENTER：处理 wxEVT_TOOL_ENTER 事件。传递工具栏本身的ID。的值wx.CommandEvent.GetSelection 是工具ID，如果鼠标光标已移出工具，则值为 -1。（在wxOSX上不可用。）
+EVT_COMMAND_LEFT_CLICK：处理wxEVT_COMMAND_LEFT_CLICK 由控件生成的 命令（仅wxMSW）。
+EVT_COMMAND_LEFT_DCLICK：处理wxEVT_COMMAND_LEFT_DCLICK 由控件生成的 命令（仅wxMSW）。
+EVT_COMMAND_RIGHT_CLICK：处理wxEVT_COMMAND_RIGHT_CLICK 由控件生成的 命令（仅wxMSW）。
+EVT_COMMAND_SET_FOCUS：处理wxEVT_COMMAND_SET_FOCUS 由控件生成的 命令（仅wxMSW）。
+EVT_COMMAND_KILL_FOCUS：处理wxEVT_COMMAND_KILL_FOCUS 由控件生成的 命令（仅wxMSW）。
+EVT_COMMAND_ENTER：处理wxEVT_COMMAND_ENTER 由控件生成的 命令。
+------------------------------------------------------
+布局相关
+
+对齐标志：
+wx.ALIGN_TOP：靠着它所处的格子的上边缘。这是默认的行为。
+wx.ALIGN_BOTTOM：按照窗口部件被分配的空间（格子）的底部对齐。
+wx.ALIGN_LEFT：靠着它所处的格子左边缘。这是默认行为。
+wx.ALIGN_RIGHT：靠着它所处的格子有边缘。这是默认行为。
+wx.ALIGN_CENTER：放置窗口部件，使窗口部件的中心处于其所分配的空间的中心。
+wx.ALIGN_CENTER_HORIZONTAL：在它所处的格子中，水平居中。
+wx.ALIGN_CENTER_VERTICAL：在它所处的格子中，垂直居中。
+
+行为标志
+wx.EXPAND：填满它所处的格子空间。
+wx.FIXED_MINSIZE：保持固定项的最小尺寸。
+wx.GROW：与wx.EXPAND相同。但比之少两个字符，节约了时间。
+wx.SHAPED：窗口部件的尺寸改变时，只在一个方向上填满格子，另一个方向上按窗口部件原先的形状尺寸的比列填充。
+wx.RESERVE_SPACE_EVEN_IF_HIDDEN：在隐藏项目时，不允许sizer回收项目的空间
+
+Add方法通过wx.TOP、wx.BOTTOM、wx.LEFT、wx.RIGHT、wx.ALL来声明边界。
+
+leftBox = wx.BoxSizer(wx.VERTICAL)   wx.VERTICAL表示这个BoxSizer为纵向   wx.HORIZONTAL 横向
+
+1.wx.BoxSizer：在一条线上布局子窗口部件。wx.BoxSizer的布局方向可以是水平或坚直的，并且可以在水平或坚直方向上包含子sizer以创建复杂的布局。在项目被添加时传递给sizer的参数控制子窗口部件如何根据box的主体或垂直轴线作相应的尺寸调整。
+2.wx.FlexGridSizer：一个固定的二维网格，它与wx.GridSizer的区别是，行和列根据所在行或列的最大元素分别被设置。
+3.wx.GridSizer：一个固定的二维网格，其中的每个元素都有相同的尺寸。当创建一个grid sizer时，你要么固定行的数量，要么固定列的数量。项目被从左到右的添加，直到一行被填满，然后从下一行开始。
+4.wx.GridBagSizer：一个固定的二维网格，基于wx.FlexGridSizer。允许项目被放置在网格上的特定点，也允许项目跨越多和网格区域。
+5.wx.StaticBoxSizer：等同于wx.BoxSizer，只是在box周围多了一个附加的边框（有一个可选的标签）。
+------------------------------------------------------
